@@ -4,6 +4,9 @@ import { ChatOpenAI } from 'langchain/chat_models/openai';
 import { ChatPromptTemplate } from 'langchain/prompts';
 import { StringOutputParser } from 'langchain/schema/output_parser';
 
+export const maxDuration = 20;
+export const dynamic = 'force-dynamic';
+
 const prompt = ChatPromptTemplate.fromMessages([['human', 'Given ingredients ${ingredients}, suggest a recipe']]);
 const model = new ChatOpenAI({ openAIApiKey: process.env.OPENAI_API_KEY, temperature: 0.5 });
 
