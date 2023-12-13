@@ -18,8 +18,6 @@ async function generateRecipes(ingredients: string): Promise<string> {
 
 export async function POST(request: NextRequest) {
   try {
-    console.log(process.env.OPENAI_API_KEY);
-
     const requestBody = await request.json();
     const ingredients = requestBody.ingredients as string;
 
