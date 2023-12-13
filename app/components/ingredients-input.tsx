@@ -20,9 +20,7 @@ export default function IngredientsInput() {
 
   const { mutateAsync, isPending } = useMutation({
     mutationFn: getRecipe,
-    onSuccess: (data) => {
-      queryClient.setQueryData(['recipe'], data.data);
-    },
+    onSuccess: (data) => queryClient.setQueryData(['recipe'], data.data),
   });
 
   const form = useForm<z.infer<typeof IngredientsSchema>>({
@@ -33,6 +31,7 @@ export default function IngredientsInput() {
   const onSubmit = (data: z.infer<typeof IngredientsSchema>) => {
     const { ingredients } = data;
 
+    queryClient.setQueryData(['recipe'], '');
     mutateAsync(ingredients);
   };
 

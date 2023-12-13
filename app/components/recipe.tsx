@@ -12,6 +12,11 @@ export default function Recipe() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
+    setDisplayedText('');
+    setCurrentIndex(0);
+  }, [data]);
+
+  useEffect(() => {
     if (data) {
       if (currentIndex < data.length) {
         setTimeout(() => {
