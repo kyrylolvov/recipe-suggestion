@@ -21,7 +21,7 @@ export default function IngredientsInput() {
   const { mutateAsync, isPending } = useMutation({
     mutationFn: getRecipe,
     onSuccess: (data) => {
-      queryClient.setQueryData(['recipe'], data.data.recipe);
+      queryClient.setQueryData(['recipe'], data.data);
     },
   });
 
