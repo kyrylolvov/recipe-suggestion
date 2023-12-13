@@ -5,7 +5,7 @@ import { ChatPromptTemplate } from 'langchain/prompts';
 import { StringOutputParser } from 'langchain/schema/output_parser';
 
 const prompt = ChatPromptTemplate.fromMessages([['human', 'Given ingredients ${ingredients}, suggest a recipe']]);
-const model = new ChatOpenAI({ openAIApiKey: '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' });
+const model = new ChatOpenAI({ openAIApiKey: process.env.OPENAI_API_KEY });
 
 const outputParser = new StringOutputParser();
 
@@ -20,6 +20,8 @@ export async function POST(request: NextRequest) {
   try {
     const requestBody = await request.json();
     const ingredients = requestBody.ingredients as string;
+
+    console.log(ingredients);
 
     if (!ingredients) {
       return NextResponse.json({ error: 'Invalid ingredients format' }, { status: 400 });
