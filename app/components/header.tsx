@@ -8,7 +8,7 @@ export default function Header() {
     <header className="py-4 flex justify-between items-center">
       <Link href="/" className="flex items-center gap-3">
         <Pencil2Icon className="w-6 h-6" />
-        <div className="hidden md:block font-semibold">Recipe Suggestions</div>
+        <div className="block font-semibold">Recipe Suggestions</div>
       </Link>
       <ThemeSwitch />
     </header>
