@@ -1,9 +1,10 @@
 import Header from '~/components/header';
 import IngredientsInput from '~/components/ingredients-input';
+import Recipe from '~/components/recipe';
 
 export default function Home() {
   return (
-    <main className="px-6 lg:p-0 max-w-[768px] mx-auto flex flex-col justify-between h-screen">
+    <main className="px-6 max-w-[768px] mx-auto flex flex-col justify-between pb-4">
       <div>
         <Header />
         <div>
@@ -13,6 +14,7 @@ export default function Home() {
           </p>
           <IngredientsInput />
         </div>
+        <Recipe />
       </div>
     </main>
   );
