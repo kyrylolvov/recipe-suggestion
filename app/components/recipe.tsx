@@ -29,5 +29,5 @@ export default function Recipe() {
 
   if (!data) return null;
 
-  return <div className="whitespace-pre-line mt-4 bg-secondary/40 rounded-md p-4 border">{displayedText}</div>;
+  return <div className="whitespace-pre-line mt-4 bg-secondary/40 rounded-md p-4 border text-sm">{displayedText}</div>;
 }
